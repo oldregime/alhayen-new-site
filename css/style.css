@@ -1754,3 +1754,249 @@ ul, ol {
     padding: 1.5rem;
   }
 }
+
+/* --- Nav Static (Inner Pages — always white bg) --- */
+.nav-static {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 1px 0 var(--outline-variant) !important;
+  padding: 0.625rem 0 !important;
+}
+
+.nav-static .nav-logo-name {
+  color: var(--primary) !important;
+}
+
+.nav-static .nav-logo-sub {
+  color: var(--on-surface-variant) !important;
+}
+
+.nav-static .nav-link {
+  color: var(--on-surface-variant) !important;
+}
+
+.nav-static .nav-link:hover,
+.nav-static .nav-link.active {
+  color: var(--primary) !important;
+  background: var(--surface-container-low) !important;
+}
+
+.nav-static .nav-cta-phone {
+  background: var(--primary-fixed) !important;
+  color: var(--primary) !important;
+}
+
+.nav-static .nav-cta-phone:hover {
+  background: var(--primary) !important;
+  color: var(--on-primary) !important;
+}
+
+.nav-static .nav-toggle span {
+  background: var(--on-surface) !important;
+}
+
+/* --- Animated Blueprint Background --- */
+.blueprint-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.blueprint-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(0, 52, 97, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 52, 97, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: blueprint-drift 20s linear infinite;
+}
+
+@keyframes blueprint-drift {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+/* Floating geometric shapes */
+.floating-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-shape {
+  position: absolute;
+  border: 1.5px solid rgba(0, 52, 97, 0.06);
+  border-radius: var(--radius-default);
+  animation: float-rotate var(--duration, 18s) var(--ease-out-expo) infinite;
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+.floating-shape.circle {
+  border-radius: 50%;
+}
+
+.floating-shape:nth-child(1) {
+  width: 60px; height: 60px;
+  top: 15%; left: 8%;
+  --duration: 22s;
+  animation-delay: 0s;
+}
+
+.floating-shape:nth-child(2) {
+  width: 40px; height: 40px;
+  top: 60%; right: 10%;
+  --duration: 18s;
+  animation-delay: 2s;
+}
+
+.floating-shape:nth-child(3) {
+  width: 80px; height: 80px;
+  bottom: 20%; left: 15%;
+  --duration: 25s;
+  animation-delay: 4s;
+}
+
+.floating-shape:nth-child(4) {
+  width: 30px; height: 30px;
+  top: 30%; right: 20%;
+  --duration: 16s;
+  animation-delay: 1s;
+}
+
+.floating-shape:nth-child(5) {
+  width: 50px; height: 50px;
+  bottom: 35%; right: 5%;
+  --duration: 20s;
+  animation-delay: 3s;
+}
+
+.floating-shape:nth-child(6) {
+  width: 45px; height: 45px;
+  top: 70%; left: 40%;
+  --duration: 24s;
+  animation-delay: 5s;
+}
+
+@keyframes float-rotate {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) rotate(0deg) scale(0.8);
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg) scale(1.1);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px) rotate(360deg) scale(0.8);
+  }
+}
+
+/* Hero-specific floating shapes (lighter, more visible on dark bg) */
+.hero .floating-shape {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Light floating crosshairs / markers for blueprint feel */
+.floating-crosshair {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 0;
+  animation: crosshair-pulse var(--duration, 4s) ease-in-out infinite;
+}
+
+.floating-crosshair::before,
+.floating-crosshair::after {
+  content: '';
+  position: absolute;
+  background: rgba(0, 52, 97, 0.07);
+}
+
+.floating-crosshair::before {
+  width: 100%; height: 1px;
+  top: 50%; left: 0;
+}
+
+.floating-crosshair::after {
+  width: 1px; height: 100%;
+  top: 0; left: 50%;
+}
+
+.floating-crosshair:nth-child(1) { top: 20%; left: 25%; --duration: 3s; }
+.floating-crosshair:nth-child(2) { top: 50%; right: 15%; --duration: 4.5s; animation-delay: 1s; }
+.floating-crosshair:nth-child(3) { bottom: 30%; left: 60%; --duration: 3.5s; animation-delay: 2s; }
+
+@keyframes crosshair-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.5); }
+}
+
+/* Animated dashed circle accent */
+.dashed-circle {
+  position: absolute;
+  border: 1.5px dashed rgba(0, 52, 97, 0.05);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: spin-slow var(--duration, 30s) linear infinite;
+}
+
+.dashed-circle:nth-child(1) {
+  width: 200px; height: 200px;
+  top: -60px; right: -40px;
+  --duration: 40s;
+}
+
+.dashed-circle:nth-child(2) {
+  width: 150px; height: 150px;
+  bottom: -40px; left: -30px;
+  --duration: 35s;
+  animation-direction: reverse;
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animated connecting lines */
+.connecting-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 52, 97, 0.06), transparent);
+  pointer-events: none;
+  z-index: 0;
+  animation: line-sweep var(--duration, 6s) ease-in-out infinite;
+}
+
+.connecting-line:nth-child(1) {
+  width: 200px; top: 40%; left: 5%;
+  transform: rotate(-15deg);
+  --duration: 7s;
+}
+
+.connecting-line:nth-child(2) {
+  width: 160px; bottom: 25%; right: 8%;
+  transform: rotate(10deg);
+  --duration: 5s;
+  animation-delay: 2s;
+}
+
+@keyframes line-sweep {
+  0%, 100% { opacity: 0; transform: translateX(-20px) scaleX(0.5); }
+  50% { opacity: 1; transform: translateX(20px) scaleX(1); }
+}
