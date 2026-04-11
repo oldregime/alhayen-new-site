@@ -595,20 +595,41 @@ ul, ol {
 
 .hero-stat {
   text-align: left;
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  animation: stat-pop-in 0.6s var(--ease-out-expo) forwards;
+}
+
+.hero-stat:nth-child(1) { animation-delay: 0.8s; }
+.hero-stat:nth-child(2) { animation-delay: 1.0s; }
+.hero-stat:nth-child(3) { animation-delay: 1.2s; }
+
+@keyframes stat-pop-in {
+  0% { opacity: 0; transform: translateY(16px) scale(0.9); }
+  60% { transform: translateY(-2px) scale(1.05); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .hero-stat-number {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--secondary-container);
   line-height: 1;
+  text-shadow: 0 0 20px rgba(253, 178, 66, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+
+.hero-stat:hover .hero-stat-number {
+  text-shadow: 0 0 30px rgba(253, 178, 66, 0.5);
 }
 
 .hero-stat-label {
   font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.6);
-  margin-top: 0.25rem;
+  margin-top: 0.375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 /* Hero Visual */

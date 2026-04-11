@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Al Hayen Technical Services LLC — Sharjah's Trusted Technical Partner</title>
+<meta name="description" content="Learn about Al Hayen Technical Services LLC — founded in Sharjah Industrial Area 2, serving 200+ businesses across UAE with precision engineering, HVAC, MEP, and maintenance solutions.">
+<meta name="keywords" content="about Al Hayen, technical services Sharjah, industrial maintenance company UAE, HVAC company Ajman, MEP contractor Sharjah">
+<link rel="canonical" href="https://www.servegategroup.com/about">
+<meta property="og:title" content="About Us | Al Hayen Technical Services LLC">
+<meta property="og:description" content="Built on Precision. Driven by Trust. Sharjah's trusted partner for industrial maintenance and technical services.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.about-hero{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-container) 50%,#005a9e 100%);padding:8rem 0 4rem;text-align:center;position:relative;overflow:hidden}
+.about-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.about-hero h1{color:var(--on-primary);position:relative;z-index:1}
+.about-hero p{color:rgba(255,255,255,.75);max-width:600px;margin:1rem auto 0;position:relative;z-index:1;font-size:1.125rem}
+.about-hero .hero-badge{justify-content:center;margin:0 auto 1.5rem;position:relative;z-index:1}
+
+/* Story Section */
+.story{background:var(--surface-container-lowest)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.story-content h2{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;margin-bottom:1rem}
+.story-content h3{font-family:var(--font-display);font-size:1.125rem;font-weight:600;color:var(--primary);margin-bottom:.75rem}
+.story-content p{color:var(--on-surface-variant);line-height:1.8;margin-bottom:1rem}
+.story-content p:last-of-type{margin-bottom:0}
+
+/* Timeline */
+.timeline{background:var(--surface)}
+.timeline-track{position:relative;max-width:700px;margin:0 auto;padding:2rem 0}
+.timeline-track::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--primary),var(--secondary-container));transform:translateX(-50%)}
+.timeline-item{display:flex;align-items:center;margin-bottom:2.5rem;position:relative}
+.timeline-item:nth-child(odd){flex-direction:row;text-align:right;padding-right:calc(50% + 2rem)}
+.timeline-item:nth-child(even){flex-direction:row-reverse;text-align:left;padding-left:calc(50% + 2rem)}
+.timeline-dot{position:absolute;left:50%;transform:translateX(-50%);width:16px;height:16px;background:var(--primary);border:3px solid var(--surface);border-radius:50%;z-index:2;box-shadow:0 0 0 4px var(--primary-fixed)}
+.timeline-content{flex:1}
+.timeline-year{font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--secondary-container);line-height:1}
+.timeline-text{font-size:.9375rem;color:var(--on-surface-variant);margin-top:.25rem}
+
+/* Values Section */
+.values{background:var(--surface-container-lowest)}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+.value-card{background:var(--surface);border-radius:var(--radius-md);padding:2rem 1.5rem;text-align:center;transition:all var(--transition-medium);position:relative;overflow:hidden}
+.value-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary-container));transform:scaleX(0);transform-origin:left;transition:transform var(--transition-medium)}
+.value-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px var(--shadow-ambient)}
+.value-card:hover::before{transform:scaleX(1)}
+.value-icon{width:56px;height:56px;background:var(--primary-fixed);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;color:var(--primary);transition:all var(--transition-medium)}
+.value-card:hover .value-icon{background:linear-gradient(135deg,var(--primary),var(--primary-container));color:var(--on-primary)}
+.value-icon svg{width:26px;height:26px}
+.value-card h3{font-family:var(--font-display);font-size:1.0625rem;font-weight:700;margin-bottom:.5rem}
+.value-card p{font-size:.875rem;color:var(--on-surface-variant);line-height:1.5}
+
+/* Coverage Section */
+.coverage{background:var(--surface)}
+.coverage-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.coverage-map{background:linear-gradient(135deg,var(--primary),var(--primary-container));border-radius:var(--radius-lg);padding:3rem;position:relative;overflow:hidden}
+.coverage-map::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:20px 20px}
+.coverage-locations{display:grid;grid-template-columns:1fr 1fr;gap:1rem;position:relative;z-index:1}
+.coverage-location{display:flex;align-items:center;gap:.75rem;padding:.875rem 1.25rem;background:rgba(255,255,255,.08);border-radius:var(--radius-default);backdrop-filter:blur(8px);transition:all var(--transition-fast)}
+.coverage-location:hover{background:rgba(255,255,255,.15);transform:translateX(4px)}
+.coverage-pin{width:8px;height:8px;background:var(--secondary-container);border-radius:50%;box-shadow:0 0 8px rgba(253,178,66,.4)}
+.coverage-location span{color:var(--on-primary);font-size:.9375rem;font-weight:500}
+.coverage-content h2{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2rem);font-weight:700;margin-bottom:1rem}
+.coverage-content p{color:var(--on-surface-variant);line-height:1.7;margin-bottom:2rem}
+
+@media(max-width:768px){
+.story-grid{grid-template-columns:1fr;gap:2rem}
+.values-grid{grid-template-columns:1fr 1fr;gap:1rem}
+.timeline-track::before{left:1rem}
+.timeline-item:nth-child(odd),.timeline-item:nth-child(even){flex-direction:row;text-align:left;padding:0 0 0 3rem}
+.timeline-dot{left:1rem}
+.coverage-inner{grid-template-columns:1fr;gap:2rem}
+}
+@media(max-width:480px){.values-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav scrolled" role="navigation">
+<div class="container"><div class="nav-inner">
+<a href="index.html" class="nav-logo">
+<svg class="nav-logo-icon" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="4" fill="#003461"/><path d="M10 30V14l10-6 10 6v16" stroke="#fdb242" stroke-width="2.5" fill="none"/><rect x="16" y="20" width="8" height="10" rx="1" stroke="#fff" stroke-width="1.5" fill="none"/><circle cx="20" cy="14" r="3" stroke="#fdb242" stroke-width="1.5" fill="none"/></svg>
+<div class="nav-logo-text"><span class="nav-logo-name" style="color:var(--primary)">AL HAYEN</span><span class="nav-logo-sub" style="color:var(--on-surface-variant)">Technical Services LLC</span></div>
+</a>
+<ul class="nav-links" id="nav-links">
+<li><a href="index.html" class="nav-link" style="color:var(--on-surface-variant)">Home</a></li>
+<li><a href="services.html" class="nav-link" style="color:var(--on-surface-variant)">Services</a></li>
+<li><a href="about.html" class="nav-link" style="color:var(--primary);font-weight:700">About</a></li>
+<li><a href="projects.html" class="nav-link" style="color:var(--on-surface-variant)">Projects</a></li>
+<li><a href="contact.html" class="nav-link" style="color:var(--on-surface-variant)">Contact</a></li>
+</ul>
+<div class="nav-cta-group">
+<a href="tel:+971529977026" class="nav-cta-phone" style="background:var(--primary-fixed);color:var(--primary)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call Us</a>
+<a href="https://wa.me/971529977026" class="nav-cta-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12a11.96 11.96 0 002.284 7.034L.789 23.492a.5.5 0 00.612.638l4.584-1.2A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>WhatsApp</a>
+</div>
+<button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></div>
+</nav>
+
+<!-- About Hero -->
+<section class="about-hero">
+<div class="container">
+<div class="hero-badge"><span class="hero-badge-dot"></span><span>Since 2014</span></div>
+<h1 class="display-md">Built on Precision.<br>Driven by Trust.</h1>
+<p>Al Hayen Technical Services LLC has been Sharjah's trusted partner for industrial maintenance, HVAC solutions, and building services since our founding.</p>
+</div>
+</section>
+
+<!-- Our Story -->
+<section class="story section">
+<div class="container"><div class="story-grid">
+<div class="story-content reveal-left">
+<div class="section-label label-sm">Our Story</div>
+<h2>From Workshop to Trusted Partner</h2>
+<p>Al Hayen Technical Services LLC was founded with a simple belief: that industrial maintenance should be delivered with the same precision as the machines we service. Based in Sharjah's Industrial Area 2, we started as a specialized machine maintenance shop.</p>
+<p>Over the years, our expertise expanded to encompass HVAC systems, MEP infrastructure, and property finishing — always maintaining the engineering rigor that our clients depend on. Today, we serve over 200 businesses across the UAE.</p>
+<p>Our team of certified engineers and technicians brings decades of combined experience across industrial, commercial, and residential sectors. We don't just fix problems — we engineer lasting solutions.</p>
+</div>
+<div class="why-us-image reveal-right" style="border-radius:var(--radius-lg);overflow:hidden">
+<img src="images/ig_2021-05-07_colkus-hmqb_image_01_f644bfc2.jpg" alt="Al Hayen team at work" style="width:100%;height:420px;object-fit:cover">
+</div>
+</div></div>
+</section>
+
+<!-- Timeline -->
+<section class="timeline section">
+<div class="container">
+<div class="section-header reveal"><div class="section-label label-sm">Our Journey</div><h2 class="headline-lg section-title">Growing With Purpose</h2></div>
+<div class="timeline-track">
+<div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-year">2014</div><div class="timeline-text">Founded in Sharjah Industrial Area 2</div></div></div>
+<div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-year">2016</div><div class="timeline-text">Expanded to HVAC & cooling services</div></div></div>
+<div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-year">2018</div><div class="timeline-text">Added MEP & building technical services</div></div></div>
+<div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-year">2020</div><div class="timeline-text">Launched finishing & refurbishment division</div></div></div>
+<div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-year">2023</div><div class="timeline-text">Serving 200+ clients across the UAE</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- Values -->
+<section class="values section">
+<div class="container">
+<div class="section-header reveal"><div class="section-label label-sm">Our Values</div><h2 class="headline-lg section-title">The Principles That Guide Us</h2><p class="body-md section-desc">Every service call, every project, every interaction is guided by these core principles.</p></div>
+<div class="values-grid">
+<div class="value-card reveal reveal-delay-1">
+<div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+<h3>Reliability</h3><p>We deliver on every commitment — on time, on budget, and to specification.</p>
+</div>
+<div class="value-card reveal reveal-delay-2">
+<div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+<h3>Precision</h3><p>Every task is executed with engineering accuracy and meticulous attention to detail.</p>
+</div>
+<div class="value-card reveal reveal-delay-3">
+<div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+<h3>Partnership</h3><p>We build lasting relationships, not transactional contracts. Your success is ours.</p>
+</div>
+<div class="value-card reveal reveal-delay-4">
+<div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+<h3>Responsiveness</h3><p>Rapid mobilization and 24/7 emergency support to minimize your downtime.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Coverage -->
+<section class="coverage section">
+<div class="container"><div class="coverage-inner">
+<div class="coverage-content reveal-left">
+<div class="section-label label-sm">Serving the UAE</div>
+<h2>Our Reach Across the Emirates</h2>
+<p>Based in Sharjah Industrial Area 2, we provide on-site technical services across Sharjah, Dubai, Ajman, and the wider UAE region. Our mobile teams are equipped to handle projects of any scale.</p>
+<a href="contact.html" class="btn btn-primary btn-lg">Get a Free Quote</a>
+</div>
+<div class="coverage-map reveal-right">
+<div class="coverage-locations">
+<div class="coverage-location"><span class="coverage-pin"></span><span>Sharjah</span></div>
+<div class="coverage-location"><span class="coverage-pin"></span><span>Dubai</span></div>
+<div class="coverage-location"><span class="coverage-pin"></span><span>Ajman</span></div>
+<div class="coverage-location"><span class="coverage-pin"></span><span>Umm Al Quwain</span></div>
+<div class="coverage-location"><span class="coverage-pin"></span><span>Ras Al Khaimah</span></div>
+<div class="coverage-location"><span class="coverage-pin"></span><span>Fujairah</span></div>
+</div>
+</div>
+</div></div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner section" style="padding:0">
+<div class="container"><div class="cta-banner-inner">
+<div class="cta-banner-text"><h2>Ready to Work Together?</h2><p>Let's discuss how Al Hayen can support your operations.</p></div>
+<div class="cta-banner-actions">
+<a href="tel:+971529977026" class="btn btn-secondary btn-lg">+971 52 997 7026</a>
+<a href="contact.html" class="btn btn-outline btn-lg">Contact Us</a>
+</div>
+</div></div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand"><div class="nav-logo-text"><span class="nav-logo-name" style="color:#fff">AL HAYEN</span><span class="nav-logo-sub">Technical Services LLC</span></div><p>We help you in all your technical needs. Trusted partner across the UAE.</p></div>
+<div class="footer-col"><h4>Services</h4><a href="services.html">Machine Maintenance</a><a href="services.html">HVAC & AC</a><a href="services.html">Electrical</a><a href="services.html">Plumbing</a><a href="services.html">Refurbishment</a></div>
+<div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div>
+<div class="footer-col"><h4>Contact</h4><a href="tel:+971529977026">+971 52 997 7026</a><a href="mailto:alhayentechnicalservices@gmail.com">Email Us</a><a href="https://wa.me/971529977026" target="_blank">WhatsApp</a><a>P.O. Box 2225, Ajman, UAE</a></div>
+</div>
+<div class="footer-bottom"><span>&copy; 2024 Al Hayen Technical Services LLC.</span><span>Part of <a href="https://www.servegategroup.com" target="_blank">Servegate Group</a></span></div>
+</div>
+</footer>
+
+<div class="floating-whatsapp"><a href="https://wa.me/971529977026?text=Hello%20Al%20Hayen%2C%20I%20need%20technical%20services." class="floating-whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12a11.96 11.96 0 002.284 7.034L.789 23.492a.5.5 0 00.612.638l4.584-1.2A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a></div>
+<div class="mobile-cta-bar"><div class="mobile-cta-bar-inner"><a href="tel:+971529977026" class="btn btn-primary">Call Now</a><a href="https://wa.me/971529977026" class="btn btn-whatsapp" target="_blank">WhatsApp</a><a href="contact.html" class="btn btn-secondary">Get Quote</a></div></div>
+<script src="js/main.js"></script>
+</body>
+</html>
