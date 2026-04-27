@@ -94,7 +94,8 @@ a {
   transition: color var(--transition-fast);
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -511,8 +512,8 @@ ul, ol {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   z-index: 1;
 }
@@ -551,8 +552,17 @@ ul, ol {
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.3); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.3);
+  }
 }
 
 .hero-badge span {
@@ -600,14 +610,32 @@ ul, ol {
   animation: stat-pop-in 0.6s var(--ease-out-expo) forwards;
 }
 
-.hero-stat:nth-child(1) { animation-delay: 0.8s; }
-.hero-stat:nth-child(2) { animation-delay: 1.0s; }
-.hero-stat:nth-child(3) { animation-delay: 1.2s; }
+.hero-stat:nth-child(1) {
+  animation-delay: 0.8s;
+}
+
+.hero-stat:nth-child(2) {
+  animation-delay: 1.0s;
+}
+
+.hero-stat:nth-child(3) {
+  animation-delay: 1.2s;
+}
 
 @keyframes stat-pop-in {
-  0% { opacity: 0; transform: translateY(16px) scale(0.9); }
-  60% { transform: translateY(-2px) scale(1.05); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.9);
+  }
+
+  60% {
+    transform: translateY(-2px) scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .hero-stat-number {
@@ -698,8 +726,15 @@ ul, ol {
 }
 
 @keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .hero-floating-icon {
@@ -764,7 +799,10 @@ ul, ol {
 }
 
 @keyframes tooltip-appear {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .floating-whatsapp-btn {
@@ -794,8 +832,15 @@ ul, ol {
 }
 
 @keyframes whatsapp-pulse {
-  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
-  50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 12px rgba(37, 211, 102, 0.1); }
+
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 12px rgba(37, 211, 102, 0.1);
+  }
 }
 
 /* --- Floating Call Button (Mobile) --- */
@@ -1353,7 +1398,7 @@ ul, ol {
   margin-bottom: 0.5rem;
 }
 
-.contact-form-card > p {
+.contact-form-card>p {
   font-size: 0.875rem;
   color: var(--on-surface-variant);
   margin-bottom: 2rem;
@@ -1532,10 +1577,21 @@ ul, ol {
   transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
 
 .reveal-left {
   opacity: 0;
@@ -1659,7 +1715,7 @@ ul, ol {
     display: none;
   }
 
-  .nav-links.active ~ .nav-cta-group {
+  .nav-links.active~.nav-cta-group {
     display: flex;
   }
 
@@ -1802,6 +1858,11 @@ ul, ol {
   overflow: hidden;
 }
 
+.blueprint-bg>.container {
+  position: relative;
+  z-index: 2;
+}
+
 .blueprint-bg::after {
   content: '';
   position: absolute;
@@ -1809,18 +1870,24 @@ ul, ol {
   pointer-events: none;
   z-index: 0;
   background-image:
-    linear-gradient(rgba(0, 52, 97, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 52, 97, 0.02) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: blueprint-drift 20s linear infinite;
+    linear-gradient(rgba(0, 52, 97, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 52, 97, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: blueprint-drift 25s linear infinite;
+  will-change: background-position;
 }
 
 @keyframes blueprint-drift {
-  0% { background-position: 0 0; }
-  100% { background-position: 40px 40px; }
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 48px 48px;
+  }
 }
 
-/* Floating geometric shapes */
+/* ── Floating Geometric Shapes ──────────────────────────── */
 .floating-shapes {
   position: absolute;
   inset: 0;
@@ -1831,11 +1898,11 @@ ul, ol {
 
 .floating-shape {
   position: absolute;
-  border: 1.5px solid rgba(0, 52, 97, 0.06);
-  border-radius: var(--radius-default);
-  animation: float-rotate var(--duration, 18s) var(--ease-out-expo) infinite;
+  border: 1.5px solid rgba(0, 52, 97, 0.05);
+  border-radius: 6px;
+  will-change: transform, opacity;
+  animation: float-drift var(--dur, 20s) ease-in-out infinite;
   opacity: 0;
-  animation-fill-mode: both;
 }
 
 .floating-shape.circle {
@@ -1843,160 +1910,499 @@ ul, ol {
 }
 
 .floating-shape:nth-child(1) {
-  width: 60px; height: 60px;
-  top: 15%; left: 8%;
-  --duration: 22s;
+  width: 56px;
+  height: 56px;
+  top: 12%;
+  left: 6%;
+  --dur: 24s;
   animation-delay: 0s;
 }
 
 .floating-shape:nth-child(2) {
-  width: 40px; height: 40px;
-  top: 60%; right: 10%;
-  --duration: 18s;
-  animation-delay: 2s;
-}
-
-.floating-shape:nth-child(3) {
-  width: 80px; height: 80px;
-  bottom: 20%; left: 15%;
-  --duration: 25s;
-  animation-delay: 4s;
-}
-
-.floating-shape:nth-child(4) {
-  width: 30px; height: 30px;
-  top: 30%; right: 20%;
-  --duration: 16s;
-  animation-delay: 1s;
-}
-
-.floating-shape:nth-child(5) {
-  width: 50px; height: 50px;
-  bottom: 35%; right: 5%;
-  --duration: 20s;
+  width: 36px;
+  height: 36px;
+  top: 55%;
+  right: 8%;
+  --dur: 19s;
   animation-delay: 3s;
 }
 
-.floating-shape:nth-child(6) {
-  width: 45px; height: 45px;
-  top: 70%; left: 40%;
-  --duration: 24s;
-  animation-delay: 5s;
+.floating-shape:nth-child(3) {
+  width: 72px;
+  height: 72px;
+  bottom: 18%;
+  left: 12%;
+  --dur: 28s;
+  animation-delay: 6s;
 }
 
-@keyframes float-rotate {
+.floating-shape:nth-child(4) {
+  width: 28px;
+  height: 28px;
+  top: 35%;
+  right: 22%;
+  --dur: 16s;
+  animation-delay: 1.5s;
+}
+
+.floating-shape:nth-child(5) {
+  width: 48px;
+  height: 48px;
+  bottom: 30%;
+  right: 4%;
+  --dur: 22s;
+  animation-delay: 4.5s;
+}
+
+.floating-shape:nth-child(6) {
+  width: 44px;
+  height: 44px;
+  top: 72%;
+  left: 38%;
+  --dur: 26s;
+  animation-delay: 7.5s;
+}
+
+@keyframes float-drift {
   0% {
     opacity: 0;
-    transform: translateY(30px) rotate(0deg) scale(0.8);
+    transform: translateY(24px) rotate(0deg) scale(0.85);
   }
-  10% {
-    opacity: 1;
+
+  12% {
+    opacity: 0.7;
   }
+
   50% {
-    transform: translateY(-20px) rotate(180deg) scale(1.1);
+    opacity: 0.5;
+    transform: translateY(-16px) rotate(180deg) scale(1.05);
   }
-  90% {
-    opacity: 1;
+
+  88% {
+    opacity: 0.7;
   }
+
   100% {
     opacity: 0;
-    transform: translateY(30px) rotate(360deg) scale(0.8);
+    transform: translateY(24px) rotate(360deg) scale(0.85);
   }
 }
 
-/* Hero-specific floating shapes (lighter, more visible on dark bg) */
 .hero .floating-shape {
-  border-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Light floating crosshairs / markers for blueprint feel */
-.floating-crosshair {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  pointer-events: none;
-  z-index: 0;
-  animation: crosshair-pulse var(--duration, 4s) ease-in-out infinite;
-}
-
-.floating-crosshair::before,
-.floating-crosshair::after {
-  content: '';
-  position: absolute;
-  background: rgba(0, 52, 97, 0.07);
-}
-
-.floating-crosshair::before {
-  width: 100%; height: 1px;
-  top: 50%; left: 0;
-}
-
-.floating-crosshair::after {
-  width: 1px; height: 100%;
-  top: 0; left: 50%;
-}
-
-.floating-crosshair:nth-child(1) { top: 20%; left: 25%; --duration: 3s; }
-.floating-crosshair:nth-child(2) { top: 50%; right: 15%; --duration: 4.5s; animation-delay: 1s; }
-.floating-crosshair:nth-child(3) { bottom: 30%; left: 60%; --duration: 3.5s; animation-delay: 2s; }
-
-@keyframes crosshair-pulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.5); }
-}
-
-/* Animated dashed circle accent */
+/* ── Dashed Circle Accents ──────────────────────────────── */
 .dashed-circle {
   position: absolute;
-  border: 1.5px dashed rgba(0, 52, 97, 0.05);
+  border: 1.5px dashed rgba(0, 52, 97, 0.04);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  animation: spin-slow var(--duration, 30s) linear infinite;
+  will-change: transform;
+  animation: spin-slow var(--dur, 40s) linear infinite;
 }
 
-.dashed-circle:nth-child(1) {
-  width: 200px; height: 200px;
-  top: -60px; right: -40px;
-  --duration: 40s;
+.blueprint-bg>.dashed-circle:first-of-type {
+  width: 220px;
+  height: 220px;
+  top: -70px;
+  right: -50px;
+  --dur: 45s;
 }
 
-.dashed-circle:nth-child(2) {
-  width: 150px; height: 150px;
-  bottom: -40px; left: -30px;
-  --duration: 35s;
+.blueprint-bg>.dashed-circle:last-of-type {
+  width: 160px;
+  height: 160px;
+  bottom: -50px;
+  left: -35px;
+  --dur: 38s;
   animation-direction: reverse;
 }
 
 @keyframes spin-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-/* Animated connecting lines */
-.connecting-line {
+/* ── Particle Dots ──────────────────────────────────────── */
+.particle-dots {
   position: absolute;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 52, 97, 0.06), transparent);
+  inset: 0;
   pointer-events: none;
   z-index: 0;
-  animation: line-sweep var(--duration, 6s) ease-in-out infinite;
+  overflow: hidden;
 }
 
-.connecting-line:nth-child(1) {
-  width: 200px; top: 40%; left: 5%;
-  transform: rotate(-15deg);
-  --duration: 7s;
+.particle-dot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(0, 52, 97, 0.08);
+  will-change: transform, opacity;
+  animation: particle-float var(--dur, 12s) ease-in-out infinite;
 }
 
-.connecting-line:nth-child(2) {
-  width: 160px; bottom: 25%; right: 8%;
-  transform: rotate(10deg);
-  --duration: 5s;
+.particle-dot:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  --dur: 14s;
+  animation-delay: 0s;
+}
+
+.particle-dot:nth-child(2) {
+  top: 40%;
+  left: 30%;
+  --dur: 11s;
   animation-delay: 2s;
 }
 
-@keyframes line-sweep {
-  0%, 100% { opacity: 0; transform: translateX(-20px) scaleX(0.5); }
-  50% { opacity: 1; transform: translateX(20px) scaleX(1); }
+.particle-dot:nth-child(3) {
+  top: 60%;
+  left: 55%;
+  --dur: 16s;
+  animation-delay: 4s;
+}
+
+.particle-dot:nth-child(4) {
+  top: 25%;
+  left: 75%;
+  --dur: 13s;
+  animation-delay: 1s;
+}
+
+.particle-dot:nth-child(5) {
+  top: 75%;
+  left: 20%;
+  --dur: 15s;
+  animation-delay: 3s;
+}
+
+.particle-dot:nth-child(6) {
+  top: 45%;
+  left: 85%;
+  --dur: 10s;
+  animation-delay: 5s;
+}
+
+.particle-dot:nth-child(7) {
+  top: 85%;
+  left: 45%;
+  --dur: 17s;
+  animation-delay: 6s;
+}
+
+.particle-dot:nth-child(8) {
+  top: 15%;
+  left: 50%;
+  --dur: 12s;
+  animation-delay: 7s;
+}
+
+@keyframes particle-float {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translateY(-12px) scale(1.5);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: translateY(-20px) scale(1);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.3);
+  }
+}
+
+/* ── Blueprint Measurement Marks ────────────────────────── */
+.measure-mark {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  will-change: opacity;
+  animation: mark-fade var(--dur, 5s) ease-in-out infinite;
+}
+
+.measure-mark::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: rgba(0, 52, 97, 0.06);
+}
+
+.measure-mark::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 8px;
+  background: rgba(0, 52, 97, 0.06);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.measure-mark:nth-child(1) {
+  top: 18%;
+  right: 12%;
+  --dur: 6s;
+}
+
+.measure-mark:nth-child(2) {
+  bottom: 22%;
+  left: 8%;
+  --dur: 5s;
+  animation-delay: 2s;
+  transform: rotate(-30deg);
+}
+
+.measure-mark:nth-child(3) {
+  top: 55%;
+  right: 25%;
+  --dur: 7s;
+  animation-delay: 4s;
+  transform: rotate(15deg);
+}
+
+@keyframes mark-fade {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  30%,
+  70% {
+    opacity: 1;
+  }
+}
+
+/* ── Tech Angle Brackets ────────────────────────────────── */
+.tech-bracket {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 0;
+  will-change: opacity, transform;
+  animation: bracket-pulse var(--dur, 4s) ease-in-out infinite;
+}
+
+.tech-bracket::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-top: 1.5px solid rgba(0, 52, 97, 0.06);
+  border-left: 1.5px solid rgba(0, 52, 97, 0.06);
+}
+
+.tech-bracket::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-bottom: 1.5px solid rgba(0, 52, 97, 0.06);
+  border-right: 1.5px solid rgba(0, 52, 97, 0.06);
+}
+
+.tech-bracket:nth-child(1) {
+  top: 25%;
+  left: 18%;
+  --dur: 5s;
+}
+
+.tech-bracket:nth-child(2) {
+  top: 65%;
+  right: 16%;
+  --dur: 4.5s;
+  animation-delay: 1.5s;
+}
+
+.tech-bracket:nth-child(3) {
+  bottom: 15%;
+  left: 45%;
+  --dur: 6s;
+  animation-delay: 3s;
+}
+
+@keyframes bracket-pulse {
+
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.3);
+  }
+}
+
+/* ── Gradient Orb (soft glow) ───────────────────────────── */
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform, opacity;
+  filter: blur(60px);
+  animation: orb-breathe var(--dur, 10s) ease-in-out infinite;
+}
+
+.gradient-orb:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 52, 97, 0.04), transparent 70%);
+  top: 10%;
+  left: 5%;
+  --dur: 12s;
+}
+
+.gradient-orb:nth-child(2) {
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(253, 178, 66, 0.03), transparent 70%);
+  bottom: 15%;
+  right: 8%;
+  --dur: 14s;
+  animation-delay: 4s;
+}
+
+@keyframes orb-breathe {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1) translate(0, 0);
+  }
+
+  33% {
+    opacity: 0.7;
+    transform: scale(1.15) translate(10px, -8px);
+  }
+
+  66% {
+    opacity: 0.5;
+    transform: scale(0.95) translate(-6px, 6px);
+  }
+}
+
+/* ── Tech Circuit Lines ─────────────────────────────────── */
+.circuit-line {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  will-change: opacity;
+}
+
+.circuit-line::before {
+  content: '';
+  display: block;
+  background: linear-gradient(90deg, transparent, rgba(0, 52, 97, 0.04), rgba(0, 52, 97, 0.04), transparent);
+  animation: circuit-trace var(--dur, 8s) ease-in-out infinite;
+}
+
+.circuit-line.horizontal::before {
+  width: 120px;
+  height: 1px;
+}
+
+.circuit-line.vertical::before {
+  width: 1px;
+  height: 80px;
+}
+
+.circuit-line:nth-child(1) {
+  top: 30%;
+  left: 3%;
+}
+
+.circuit-line:nth-child(2) {
+  bottom: 40%;
+  right: 6%;
+  --dur: 6s;
+}
+
+.circuit-line:nth-child(1)::after,
+.circuit-line:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(0, 52, 97, 0.06);
+  animation: node-blink 3s ease-in-out infinite;
+}
+
+.circuit-line:nth-child(1)::after {
+  right: -2px;
+  top: -2px;
+}
+
+.circuit-line:nth-child(2)::after {
+  left: -2px;
+  bottom: -2px;
+  animation-delay: 1.5s;
+}
+
+@keyframes circuit-trace {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scaleX(0.3);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes node-blink {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.8);
+  }
+}
+
+/* ── Reduced motion preference ──────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+
+  .floating-shape,
+  .dashed-circle,
+  .particle-dot,
+  .measure-mark,
+  .tech-bracket,
+  .gradient-orb,
+  .circuit-line,
+  .circuit-line::before,
+  .circuit-line::after,
+  .blueprint-bg::after {
+    animation: none !important;
+  }
 }

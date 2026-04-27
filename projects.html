@@ -1,131 +1,499 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Projects | Al Hayen Technical Services LLC — HVAC, MEP & Industrial Portfolio</title>
-<meta name="description" content="View Al Hayen's project portfolio — HVAC installations, machine maintenance, bathroom renovations, electrical work, and industrial projects across UAE.">
-<link rel="canonical" href="https://www.servegategroup.com/projects">
-<link rel="stylesheet" href="css/style.css">
-<style>
-.projects-hero{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-container) 50%,#005a9e 100%);padding:8rem 0 4rem;text-align:center;position:relative;overflow:hidden}
-.projects-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
-.projects-hero h1{color:var(--on-primary);position:relative;z-index:1}
-.projects-hero p{color:rgba(255,255,255,.75);max-width:600px;margin:1rem auto 0;position:relative;z-index:1}
-.projects-gallery{background:var(--surface-container-lowest)}
-.gallery-filters{display:flex;gap:.5rem;justify-content:center;margin-bottom:3rem;flex-wrap:wrap}
-.filter-btn{padding:.5rem 1.25rem;border:none;background:var(--surface-container-low);border-radius:var(--radius-default);font-family:var(--font-body);font-size:.875rem;font-weight:500;color:var(--on-surface-variant);cursor:pointer;transition:all var(--transition-fast)}
-.filter-btn:hover,.filter-btn.active{background:var(--primary);color:var(--on-primary)}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.gallery-item{position:relative;border-radius:var(--radius-md);overflow:hidden;cursor:pointer;aspect-ratio:4/3}
-.gallery-item.tall{grid-row:span 2;aspect-ratio:auto}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform var(--transition-slow)}
-.gallery-item:hover img{transform:scale(1.05)}
-.gallery-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,52,97,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;opacity:0;transition:opacity var(--transition-medium)}
-.gallery-item:hover .gallery-overlay{opacity:1}
-.gallery-overlay .tag{font-size:.6875rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--secondary-container);margin-bottom:.25rem}
-.gallery-overlay h3{color:#fff;font-family:var(--font-display);font-size:1.0625rem;font-weight:700}
-.gallery-overlay p{color:rgba(255,255,255,.7);font-size:.8125rem;margin-top:.25rem}
-@media(max-width:768px){.gallery-grid{grid-template-columns:1fr 1fr;gap:.75rem}.gallery-item.tall{grid-row:span 1}.gallery-overlay{opacity:1}}
-@media(max-width:480px){.gallery-grid{grid-template-columns:1fr}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Projects | Al Hayen Technical Services LLC — HVAC, MEP & Industrial Portfolio</title>
+  <meta name="description"
+    content="View Al Hayen's project portfolio — HVAC installations, machine maintenance, bathroom renovations, electrical work, and industrial projects across UAE.">
+  <link rel="canonical" href="https://www.servegategroup.com/projects">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .projects-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 50%, #005a9e 100%);
+      padding: 8rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .projects-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+      background-size: 60px 60px
+    }
+
+    .projects-hero h1 {
+      color: var(--on-primary);
+      position: relative;
+      z-index: 1
+    }
+
+    .projects-hero p {
+      color: rgba(255, 255, 255, .75);
+      max-width: 600px;
+      margin: 1rem auto 0;
+      position: relative;
+      z-index: 1
+    }
+
+    .projects-gallery {
+      background: var(--surface-container-lowest)
+    }
+
+    .gallery-filters {
+      display: flex;
+      gap: .5rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+      flex-wrap: wrap
+    }
+
+    .filter-btn {
+      padding: .5rem 1.25rem;
+      border: none;
+      background: var(--surface-container-low);
+      border-radius: var(--radius-default);
+      font-family: var(--font-body);
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--on-surface-variant);
+      cursor: pointer;
+      transition: all var(--transition-fast)
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary);
+      color: var(--on-primary)
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/3
+    }
+
+    .gallery-item.tall {
+      grid-row: span 2;
+      aspect-ratio: auto
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow)
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05)
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0, 52, 97, .85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity var(--transition-medium)
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1
+    }
+
+    .gallery-overlay .tag {
+      font-size: .6875rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--secondary-container);
+      margin-bottom: .25rem
+    }
+
+    .gallery-overlay h3 {
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 1.0625rem;
+      font-weight: 700
+    }
+
+    .gallery-overlay p {
+      color: rgba(255, 255, 255, .7);
+      font-size: .8125rem;
+      margin-top: .25rem
+    }
+
+    @media(max-width:768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: .75rem
+      }
+
+      .gallery-item.tall {
+        grid-row: span 1
+      }
+
+      .gallery-overlay {
+        opacity: 1
+      }
+    }
+
+    @media(max-width:480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav class="nav" role="navigation">
-<div class="container"><div class="nav-inner">
-<a href="index.html" class="nav-logo"><svg class="nav-logo-icon" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="4" fill="#003461"/><path d="M10 30V14l10-6 10 6v16" stroke="#fdb242" stroke-width="2.5" fill="none"/><rect x="16" y="20" width="8" height="10" rx="1" stroke="#fff" stroke-width="1.5" fill="none"/><circle cx="20" cy="14" r="3" stroke="#fdb242" stroke-width="1.5" fill="none"/></svg><div class="nav-logo-text"><span class="nav-logo-name">AL HAYEN</span><span class="nav-logo-sub">Technical Services LLC</span></div></a>
-<ul class="nav-links" id="nav-links">
-<li><a href="index.html" class="nav-link">Home</a></li>
-<li><a href="services.html" class="nav-link">Services</a></li>
-<li><a href="about.html" class="nav-link">About</a></li>
-<li><a href="projects.html" class="nav-link active">Projects</a></li>
-<li><a href="contact.html" class="nav-link">Contact</a></li>
-</ul>
-<div class="nav-cta-group">
-<a href="tel:+971529977026" class="nav-cta-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call Us</a>
-<a href="https://wa.me/971529977026" class="nav-cta-whatsapp" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12a11.96 11.96 0 002.284 7.034L.789 23.492a.5.5 0 00.612.638l4.584-1.2A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>WhatsApp</a>
-</div>
-<button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-</div></div>
-</nav>
+  <nav class="nav" role="navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><svg class="nav-logo-icon" viewBox="0 0 40 40" fill="none">
+            <rect width="40" height="40" rx="4" fill="#003461" />
+            <path d="M10 30V14l10-6 10 6v16" stroke="#fdb242" stroke-width="2.5" fill="none" />
+            <rect x="16" y="20" width="8" height="10" rx="1" stroke="#fff" stroke-width="1.5" fill="none" />
+            <circle cx="20" cy="14" r="3" stroke="#fdb242" stroke-width="1.5" fill="none" />
+          </svg>
+          <div class="nav-logo-text"><span class="nav-logo-name">AL HAYEN</span><span class="nav-logo-sub">Technical
+              Services LLC</span></div>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-cta-group">
+          <a href="tel:+971529977026" class="nav-cta-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+            </svg>Call Us</a>
+          <a href="https://wa.me/971529977026" class="nav-cta-whatsapp" target="_blank"><svg viewBox="0 0 24 24"
+              fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12a11.96 11.96 0 002.284 7.034L.789 23.492a.5.5 0 00.612.638l4.584-1.2A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+            </svg>WhatsApp</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle"
+          aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
 
-<section class="projects-hero">
-<div class="container">
-<div class="section-label label-sm" style="color:var(--secondary-container);justify-content:center"><span>Portfolio</span></div>
-<h1 class="display-md">Our Recent Projects</h1>
-<p class="body-lg">A glimpse into the quality and precision we bring to every engagement across the UAE.</p>
-</div>
-</section>
+  <section class="projects-hero">
+    <div class="container">
+      <div class="section-label label-sm" style="color:var(--secondary-container);justify-content:center">
+        <span>Portfolio</span></div>
+      <h1 class="display-md">Our Recent Projects</h1>
+      <p class="body-lg">A glimpse into the quality and precision we bring to every engagement across the UAE.</p>
+    </div>
+  </section>
 
-<section class="projects-gallery section blueprint-bg">
-<div class="floating-shapes"><div class="floating-shape"></div><div class="floating-shape circle"></div><div class="floating-shape"></div><div class="floating-shape circle"></div><div class="floating-shape"></div><div class="floating-shape circle"></div></div>
-<div class="dashed-circle"></div><div class="dashed-circle"></div>
-<div class="container">
-<div class="gallery-filters">
-<button class="filter-btn active" data-filter="all">All Projects</button>
-<button class="filter-btn" data-filter="hvac">HVAC</button>
-<button class="filter-btn" data-filter="industrial">Industrial</button>
-<button class="filter-btn" data-filter="mep">MEP</button>
-<button class="filter-btn" data-filter="finishing">Finishing</button>
-</div>
-<div class="gallery-grid">
-<div class="gallery-item tall reveal" data-category="hvac"><img src="images/ig_2022-08-16_chvhcnzbmzx_image_01_106c8781.jpg" alt="HVAC outdoor unit maintenance" loading="lazy"><div class="gallery-overlay"><span class="tag">HVAC</span><h3>Commercial AC Maintenance</h3><p>Carrier unit service — rooftop installation</p></div></div>
-<div class="gallery-item reveal" data-category="finishing"><img src="images/ig_2021-12-15_cxf98jsbx-q_image_03_b2175682.jpg" alt="Bathroom renovation" loading="lazy"><div class="gallery-overlay"><span class="tag">Finishing</span><h3>Bathroom Renovation</h3><p>Complete modern bathroom refit</p></div></div>
-<div class="gallery-item reveal" data-category="mep"><img src="images/ig_2021-05-07_colohemnpby_image_01_d3613213.jpg" alt="Electrical installation" loading="lazy"><div class="gallery-overlay"><span class="tag">MEP</span><h3>Electro-Mechanical Install</h3><p>Commercial electrical panel work</p></div></div>
-<div class="gallery-item reveal" data-category="industrial"><img src="images/fb_unknown-date_post2_image_05_66b47ca9.jpg" alt="Industrial machinery" loading="lazy"><div class="gallery-overlay"><span class="tag">Industrial</span><h3>Machine Maintenance</h3><p>Glass machine servicing & repair</p></div></div>
-<div class="gallery-item reveal" data-category="mep"><img src="images/ig_2021-05-08_comzwvcnc2o_image_01_40a41da8.jpg" alt="Plumbing work" loading="lazy"><div class="gallery-overlay"><span class="tag">MEP</span><h3>Plumbing & Sanitary</h3><p>Commercial plumbing installation</p></div></div>
-<div class="gallery-item reveal" data-category="finishing"><img src="images/ig_2021-12-15_cxf98jsbx-q_image_01_9e23c23c.jpg" alt="Interior finishing" loading="lazy"><div class="gallery-overlay"><span class="tag">Finishing</span><h3>Interior Finishing</h3><p>Residential renovation project</p></div></div>
-<div class="gallery-item reveal" data-category="finishing"><img src="images/ig_2021-12-15_cxf98jsbx-q_image_02_86cb7b0d.jpg" alt="Property renovation" loading="lazy"><div class="gallery-overlay"><span class="tag">Finishing</span><h3>Property Renovation</h3><p>Kitchen & bathroom remodeling</p></div></div>
-<div class="gallery-item reveal" data-category="industrial"><img src="images/fb_unknown-date_post2_image_02_513918db.jpg" alt="Industrial project" loading="lazy"><div class="gallery-overlay"><span class="tag">Industrial</span><h3>Motor Winding</h3><p>Industrial motor repair & service</p></div></div>
-<div class="gallery-item reveal" data-category="hvac"><img src="images/ig_2021-05-07_colkus-hmqb_image_01_f644bfc2.jpg" alt="Installation work" loading="lazy"><div class="gallery-overlay"><span class="tag">HVAC</span><h3>Cooling System Install</h3><p>Commercial cooling infrastructure</p></div></div>
-</div>
-</div>
-</section>
+  <section class="projects-gallery section blueprint-bg">
+    <div class="floating-shapes">
+      <div class="floating-shape"></div>
+      <div class="floating-shape circle"></div>
+      <div class="floating-shape"></div>
+      <div class="floating-shape circle"></div>
+      <div class="floating-shape"></div>
+      <div class="floating-shape circle"></div>
+    </div>
+    <div class="dashed-circle"></div>
+    <div class="dashed-circle"></div>
+    <div class="particle-dots">
+      <div class="particle-dot"></div>
+      <div class="particle-dot"></div>
+      <div class="particle-dot"></div>
+      <div class="particle-dot"></div>
+      <div class="particle-dot"></div>
+      <div class="particle-dot"></div>
+      <div class="particle-dot"></div>
+      <div class="particle-dot"></div>
+    </div>
+    <div class="tech-bracket"></div>
+    <div class="tech-bracket"></div>
+    <div class="tech-bracket"></div>
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="container">
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="hvac">HVAC</button>
+        <button class="filter-btn" data-filter="industrial">Industrial</button>
+        <button class="filter-btn" data-filter="mep">MEP</button>
+        <button class="filter-btn" data-filter="finishing">Finishing</button>
+        <button class="filter-btn" data-filter="glass">Glass Work</button>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item tall reveal" data-category="glass"><img src="images/photo_021.webp"
+            alt="CNC Glass Engraving Machine BN-3020" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Glass Work</span>
+            <h3>CNC Glass Engraving</h3>
+            <p>BN-3020 precision glass engraving machine</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="glass"><img src="images/photo_001.webp"
+            alt="Glass edge polishing machine" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Glass Work</span>
+            <h3>Glass Edge Polishing</h3>
+            <p>STI1-45 automated edge polishing line</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="mep"><img src="images/photo_002.webp"
+            alt="Industrial electrical control panel" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">MEP</span>
+            <h3>Control Panel Wiring</h3>
+            <p>Complete panel build with contactors & relays</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="glass"><img src="images/photo_025.webp"
+            alt="Glass polishing machine maintenance" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Glass Work</span>
+            <h3>Glass Machine Service</h3>
+            <p>Glass edge polishing machine maintenance</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="mep"><img src="images/photo_007.webp"
+            alt="Eaton circuit breaker installation" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">MEP</span>
+            <h3>Circuit Breaker Install</h3>
+            <p>Eaton PKZM motor protection switches</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="industrial"><img src="images/photo_020.webp"
+            alt="Technician repairing industrial machine" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Industrial</span>
+            <h3>On-Site Repair</h3>
+            <p>Technician servicing glass processing line</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="mep"><img src="images/photo_012.webp"
+            alt="Schneider Electric contactors" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">MEP</span>
+            <h3>Contactor Installation</h3>
+            <p>Schneider Electric LCT1D12 power contactors</p>
+          </div>
+        </div>
+        <div class="gallery-item tall reveal" data-category="glass"><img src="images/photo_026.webp"
+            alt="CNC numerical control glass machine" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Glass Work</span>
+            <h3>CNC Glass Processing</h3>
+            <p>Numerical control glass cutting & shaping center</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="industrial"><img src="images/photo_009.webp"
+            alt="CNC machine control display" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Industrial</span>
+            <h3>CNC Diagnostics</h3>
+            <p>Machine coordinate calibration & troubleshooting</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="industrial"><img src="images/photo_006.webp"
+            alt="Machine control panel" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Industrial</span>
+            <h3>Control Systems</h3>
+            <p>XGT LS programmable controller setup</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="glass"><img src="images/photo_028.webp"
+            alt="Glass storage rack system" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Glass Work</span>
+            <h3>Glass Storage Racks</h3>
+            <p>Industrial glass panel rack system installation</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="mep"><img src="images/photo_015.webp" alt="PCB board repair"
+            loading="lazy">
+          <div class="gallery-overlay"><span class="tag">MEP</span>
+            <h3>Circuit Board Repair</h3>
+            <p>Electronic PCB troubleshooting & resoldering</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="industrial"><img src="images/photo_016.webp"
+            alt="Industrial saw blade" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Industrial</span>
+            <h3>Precision Tooling</h3>
+            <p>Carbide-tipped saw blade — 250mm, 60-teeth</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="industrial"><img src="images/photo_013.webp"
+            alt="Machine internal mechanism" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Industrial</span>
+            <h3>Machine Overhaul</h3>
+            <p>Belt drive & temperature control system service</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="glass"><img src="images/photo_030.webp"
+            alt="CNC glass processing close-up" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Glass Work</span>
+            <h3>Glass Precision Work</h3>
+            <p>CNC grinding wheel — edge finishing close-up</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="finishing"><img
+            src="images/ig_2021-12-15_cxf98jsbx-q_image_03_b2175682.webp" alt="Bathroom renovation" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Finishing</span>
+            <h3>Bathroom Renovation</h3>
+            <p>Complete modern bathroom refit</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="industrial"><img src="images/photo_022.webp"
+            alt="Motor repair with tools" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Industrial</span>
+            <h3>Motor Repair</h3>
+            <p>On-site motor diagnostics & repair</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="glass"><img src="images/photo_014.webp"
+            alt="Glass workshop interior" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Glass Work</span>
+            <h3>Glass Workshop</h3>
+            <p>Full-scale glass cutting & processing facility</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="mep"><img
+            src="images/ig_2021-05-07_colohemnpby_image_01_d3613213.webp" alt="Electrical installation" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">MEP</span>
+            <h3>Electro-Mechanical Install</h3>
+            <p>Commercial electrical panel work</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="industrial"><img src="images/photo_011.webp"
+            alt="Pneumatic valve system" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Industrial</span>
+            <h3>Hydraulic Systems</h3>
+            <p>Camozzi pneumatic valve maintenance</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="finishing"><img
+            src="images/ig_2021-12-15_cxf98jsbx-q_image_01_9e23c23c.webp" alt="Interior finishing" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Finishing</span>
+            <h3>Interior Finishing</h3>
+            <p>Residential renovation project</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="glass"><img src="images/photo_005.webp"
+            alt="Crystal glass figurine sculpture" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Glass Work</span>
+            <h3>Crystal Glass Sculpture</h3>
+            <p>Precision crystal glass figurine — artisan quality</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="glass"><img src="images/photo_004.webp" alt="Glass art product"
+            loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Glass Work</span>
+            <h3>Glass Art Production</h3>
+            <p>Custom glass art pieces — workshop craftsmanship</p>
+          </div>
+        </div>
+        <div class="gallery-item reveal" data-category="glass"><img src="images/photo_019.webp"
+            alt="Glass washing machine interior" loading="lazy">
+          <div class="gallery-overlay"><span class="tag">Glass Work</span>
+            <h3>Glass Washing Line</h3>
+            <p>Industrial glass washing & drying infrastructure</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="cta-banner section" style="padding:0">
-<div class="container"><div class="cta-banner-inner">
-<div class="cta-banner-text"><h2>Have a Similar Project?</h2><p>Get a free consultation and quote — no obligation.</p></div>
-<div class="cta-banner-actions">
-<a href="contact.html" class="btn btn-secondary btn-lg">Get Free Quote</a>
-<a href="https://wa.me/971529977026" class="btn btn-whatsapp btn-lg" target="_blank">WhatsApp Us</a>
-</div>
-</div></div>
-</section>
+  <section class="cta-banner section" style="padding:0">
+    <div class="container">
+      <div class="cta-banner-inner">
+        <div class="cta-banner-text">
+          <h2>Have a Similar Project?</h2>
+          <p>Get a free consultation and quote — no obligation.</p>
+        </div>
+        <div class="cta-banner-actions">
+          <a href="contact.html" class="btn btn-secondary btn-lg">Get Free Quote</a>
+          <a href="https://wa.me/971529977026" class="btn btn-whatsapp btn-lg" target="_blank">WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer class="footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand"><div class="nav-logo-text"><span class="nav-logo-name" style="color:#fff">AL HAYEN</span><span class="nav-logo-sub">Technical Services LLC</span></div><p>We help you in all your technical needs.</p></div>
-<div class="footer-col"><h4>Services</h4><a href="services.html">Machine Maintenance</a><a href="services.html">HVAC & AC</a><a href="services.html">Electrical</a><a href="services.html">Plumbing</a></div>
-<div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div>
-<div class="footer-col"><h4>Contact</h4><a href="tel:+971529977026">+971 52 997 7026</a><a href="mailto:alhayentechnicalservices@gmail.com">Email Us</a><a href="https://wa.me/971529977026" target="_blank">WhatsApp</a></div>
-</div>
-<div class="footer-bottom"><span>&copy; 2024 Al Hayen Technical Services LLC.</span><span>Part of <a href="https://www.servegategroup.com" target="_blank">Servegate Group</a></span></div>
-</div>
-</footer>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo-text"><span class="nav-logo-name" style="color:#fff">AL HAYEN</span><span
+              class="nav-logo-sub">Technical Services LLC</span></div>
+          <p>We help you in all your technical needs.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4><a href="services.html">Machine Maintenance</a><a href="services.html">HVAC & AC</a><a
+            href="services.html">Electrical</a><a href="services.html">Plumbing</a>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4><a href="index.html">Home</a><a href="services.html">Services</a><a
+            href="about.html">About</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4><a href="tel:+971529977026">+971 52 997 7026</a><a
+            href="mailto:alhayentechnicalservices@gmail.com">Email Us</a><a href="https://wa.me/971529977026"
+            target="_blank">WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2024 Al Hayen Technical Services LLC.</span><span>Part of <a
+            href="https://www.servegategroup.com" target="_blank">Servegate Group</a></span></div>
+    </div>
+  </footer>
 
-<div class="floating-whatsapp"><a href="https://wa.me/971529977026" class="floating-whatsapp-btn" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12a11.96 11.96 0 002.284 7.034L.789 23.492a.5.5 0 00.612.638l4.584-1.2A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a></div>
-<div class="mobile-cta-bar"><div class="mobile-cta-bar-inner"><a href="tel:+971529977026" class="btn btn-primary">Call Now</a><a href="https://wa.me/971529977026" class="btn btn-whatsapp" target="_blank">WhatsApp</a><a href="contact.html" class="btn btn-secondary">Get Quote</a></div></div>
+  <div class="floating-whatsapp"><a href="https://wa.me/971529977026" class="floating-whatsapp-btn" target="_blank"
+      aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        <path
+          d="M12 0C5.373 0 0 5.373 0 12a11.96 11.96 0 002.284 7.034L.789 23.492a.5.5 0 00.612.638l4.584-1.2A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+      </svg></a></div>
+  <div class="mobile-cta-bar">
+    <div class="mobile-cta-bar-inner"><a href="tel:+971529977026" class="btn btn-primary">Call Now</a><a
+        href="https://wa.me/971529977026" class="btn btn-whatsapp" target="_blank">WhatsApp</a><a href="contact.html"
+        class="btn btn-secondary">Get Quote</a></div>
+  </div>
 
-<script src="js/main.js"></script>
-<script>
-// Gallery filter functionality
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      if (filter === 'all' || item.dataset.category === filter) {
-        item.style.display = '';
-        item.style.animation = 'fadeIn 0.4s ease forwards';
-      } else {
-        item.style.display = 'none';
-      }
+  <script src="js/main.js"></script>
+  <script>
+    // Gallery filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.style.display = '';
+            item.style.animation = 'fadeIn 0.4s ease forwards';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
     });
-  });
-});
-</script>
+  </script>
 </body>
+
 </html>
